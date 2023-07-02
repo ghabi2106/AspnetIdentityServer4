@@ -11,22 +11,22 @@ namespace IdentityServer
         public static IEnumerable<Client> Clients =>
             new Client[]
             {
-                   new Client
-                   {
-                        ClientId = "movieClient",
-                        AllowedGrantTypes = GrantTypes.ClientCredentials,
-                        ClientSecrets =
-                        {
-                            new Secret("secret".Sha256())
-                        },
-                        AllowedScopes = { "movieAPI" }
-                   },
+                   //new Client
+                   //{
+                   //     ClientId = "movieClient",
+                   //     AllowedGrantTypes = GrantTypes.ClientCredentials,
+                   //     ClientSecrets =
+                   //     {
+                   //         new Secret("secret".Sha256())
+                   //     },
+                   //     AllowedScopes = { "movieAPI" }
+                   //},
                    new Client
                    {
                        ClientId = "movies_mvc_client",
                        ClientName = "Movies MVC Web App",
-                       //AllowedGrantTypes = GrantTypes.Hybrid,
-                       AllowedGrantTypes = GrantTypes.Code,
+                       AllowedGrantTypes = GrantTypes.Hybrid,
+                       //AllowedGrantTypes = GrantTypes.Code,
                        RequirePkce = false,
                        AllowRememberConsent = false,
                        RedirectUris = new List<string>()
@@ -47,7 +47,7 @@ namespace IdentityServer
                            IdentityServerConstants.StandardScopes.Profile,
                            //IdentityServerConstants.StandardScopes.Address,
                            //IdentityServerConstants.StandardScopes.Email,
-                           //"movieAPI",
+                           "movieAPI",
                            //"roles"
                        }
                    }

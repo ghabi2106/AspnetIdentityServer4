@@ -1,4 +1,5 @@
-﻿using Movies.Client.Models;
+﻿using Microsoft.AspNetCore.Http;
+using Movies.Client.Models;
 using Newtonsoft.Json;
 
 namespace Movies.Client.ApiServices
@@ -6,13 +7,16 @@ namespace Movies.Client.ApiServices
     public class MovieApiService : IMovieApiService
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        //private readonly IHttpContextAccessor _httpContextAccessor;
-
         public MovieApiService(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
-            //_httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
         }
+
+        //private readonly IHttpContextAccessor _httpContextAccessor;
+        //public MovieApiService(IHttpContextAccessor httpContextAccessor)
+        //{
+        //    _httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
+        //}
 
         public async Task<IEnumerable<Movie>> GetMovies()
         {

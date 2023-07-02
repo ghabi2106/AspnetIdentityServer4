@@ -24,8 +24,8 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddAuthorization(options =>
 {
-    //options.AddPolicy("ClientIdPolicy", policy => policy.RequireClaim("client_id", "movieClient", "movies_mvc_client"));
-    options.AddPolicy("ClientIdPolicy", policy => policy.RequireClaim("client_id", "movieClient"));
+    options.AddPolicy("ClientIdPolicy", policy => policy.RequireClaim("client_id", "movieClient", "movies_mvc_client"));
+    //options.AddPolicy("ClientIdPolicy", policy => policy.RequireClaim("client_id", "movieClient"));
 });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
